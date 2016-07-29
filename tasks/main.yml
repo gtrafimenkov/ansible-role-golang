@@ -35,6 +35,9 @@
               - "package_stat_after.stat.checksum == _golang_params['checksum']"
       when: (package_stat.stat.islnk is not defined) or (package_stat.stat.checksum != _golang_params['checksum'])
 
+    - name: Remove previous installation
+      file: path={{golang_install_dir}}/go state=absent
+
     - name: Unpack the archive
       unarchive:
         src="{{golang_install_dir}}/{{_golang_params['package']}}"
