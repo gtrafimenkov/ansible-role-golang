@@ -1,0 +1,9 @@
+---
+
+golang_version: 1.6.3
+
+# Where to install go binaries
+golang_install_dir: /usr/local
+
+# If true, add go binaries to PATH
+golang_add_bin_to_path: true

@@ -1,0 +1,27 @@
+---
+
+- hosts: localhost
+  become: yes
+  vars:
+    golang_version: 1.4.3
+  roles:
+    - ansible-role-golang
+
+- hosts: localhost
+  become: yes
+  vars:
+    golang_version: 1.5.4
+  roles:
+    - ansible-role-golang
+
+- hosts: localhost
+  become: yes
+  vars:
+    golang_version: 1.6.3
+  roles:
+    - ansible-role-golang
+
+- hosts: localhost
+  become: yes
+  roles:
+    - ansible-role-golang

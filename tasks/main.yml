@@ -1,0 +1,48 @@
+---
+
+- name: Check supported architecture
+  assert:
+    that:
+      - ansible_architecture in ['x86_64', 'i386']
+
+- set_fact: _golang_params="{{golang_packages[golang_version][ansible_architecture]}}"
+
+- name: Check if the requested version already installed
+  command: "{{golang_install_dir}}/go/bin/go version"
+  failed_when: false
+  changed_when: false
+  register: version_check_res
+
+# Installing the right version
+- block:
+    - name: Check if package already downloaded
+      stat: path="{{golang_install_dir}}/{{_golang_params['package']}}" checksum_algo={{_golang_params['checksum_algo']}}
+      register: package_stat
+
+    # Download only if the package is missing or checksum is not correct
+    - block:
+        - name: Download package if necessary
+          get_url: url={{_golang_params['url']}} dest={{golang_install_dir}}/{{_golang_params['package']}}
+          when: (package_stat.stat.islnk is not defined) or (package_stat.stat.checksum != _golang_params['checksum'])
+
+        - name: Check package checksum
+          stat: path="{{golang_install_dir}}/{{_golang_params['package']}}" checksum_algo={{_golang_params['checksum_algo']}}
+          register: package_stat_after
+
+        - name: Make sure checksum is correct
+          assert:
+            that:
+              - "package_stat_after.stat.checksum == _golang_params['checksum']"
+      when: (package_stat.stat.islnk is not defined) or (package_stat.stat.checksum != _golang_params['checksum'])
+
+    - name: Unpack the archive
+      unarchive:
+        src="{{golang_install_dir}}/{{_golang_params['package']}}"
+        dest="{{golang_install_dir}}"
+        copy=no
+        creates="{{golang_install_dir}}/go/go/bin/go"
+
+    - name: Add binaries to PATH if required
+      template: src=golang.sh dest=/etc/profile.d/golang.sh
+
+  when: version_check_res.rc != 0 or version_check_res.failed|default(false) or ('go version go' + golang_version + ' ' not in version_check_res.stdout)

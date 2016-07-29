@@ -1,0 +1,36 @@
+---
+
+golang_packages:
+  "1.6.3":
+    x86_64:
+      package: go1.6.3.linux-amd64.tar.gz
+      url: https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
+      checksum: cdde5e08530c0579255d6153b08fdb3b8e47caabbe717bc7bcd7561275a87aeb
+      checksum_algo: sha256
+    i386:
+      package: go1.6.3.linux-386.tar.gz
+      url: https://storage.googleapis.com/golang/go1.6.3.linux-386.tar.gz
+      checksum: 4d0657f4760c81c1b208939ae58f6fc06f936ee51b8cdcf75e5136d0d0c6df94
+      checksum_algo: sha256
+  "1.5.4":
+    x86_64:
+      package: go1.5.4.linux-amd64.tar.gz
+      url: https://storage.googleapis.com/golang/go1.5.4.linux-amd64.tar.gz
+      checksum: a3358721210787dc1e06f5ea1460ae0564f22a0fbd91be9dcd947fb1d19b9560
+      checksum_algo: sha256
+    i386:
+      package: go1.5.4.linux-386.tar.gz
+      url: https://storage.googleapis.com/golang/go1.5.4.linux-386.tar.gz
+      checksum: 4b2b29d44144d0d306ba34ca5559aa9314c8f31165421ade2b59c74c28059690
+      checksum_algo: sha256
+  "1.4.3":
+    x86_64:
+      package: go1.4.3.linux-amd64.tar.gz
+      url: https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz
+      checksum: 332b64236d30a8805fc8dd8b3a269915b4c507fe
+      checksum_algo: sha1
+    i386:
+      package: go1.4.3.linux-386.tar.gz
+      url: https://storage.googleapis.com/golang/go1.4.3.linux-386.tar.gz
+      checksum: 405777725abe566989cdb436d2efeb2667be670f
+      checksum_algo: sha1
