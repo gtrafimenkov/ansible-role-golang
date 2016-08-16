@@ -1,6 +1,6 @@
 ---
 
-golang_version: 1.6.3
+golang_version: "1.7"
 
 # Where to install go binaries
 golang_install_dir: /usr/local

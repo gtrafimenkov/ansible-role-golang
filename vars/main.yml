@@ -1,6 +1,17 @@
 ---
 
 golang_packages:
+  "1.7":
+    x86_64:
+      package: go1.7.linux-amd64.tar.gz
+      url: https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
+      checksum: 702ad90f705365227e902b42d91dd1a40e48ca7f67a2f4b2fd052aaa4295cd95
+      checksum_algo: sha256
+    i386:
+      package: go1.7.linux-386.tar.gz
+      url: https://storage.googleapis.com/golang/go1.7.linux-386.tar.gz
+      checksum: 1207477aa3471222f0555825f9d6ac2a39abc75839f2dfd357f19f5077f710f2
+      checksum_algo: sha256
   "1.6.3":
     x86_64:
       package: go1.6.3.linux-amd64.tar.gz
