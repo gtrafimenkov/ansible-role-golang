@@ -22,6 +22,7 @@ golang_packages:
       package: go1.8.linux-386.tar.gz
       url: https://storage.googleapis.com/golang/go1.8.linux-386.tar.gz
       checksum: 8f618dc8b01c2e53e639a38d780645b8424e671e292c7b518248022205d6a448
+      checksum_algo: sha256
   "1.7":
     x86_64:
       package: go1.7.linux-amd64.tar.gz
