@@ -1,6 +1,17 @@
 ---
 
 golang_packages:
+  "1.10.1":
+    x86_64:
+      package: go1.10.1.linux-amd64.tar.gz
+      url: https://storage.googleapis.com/golang/go1.10.1.linux-amd64.tar.gz
+      checksum: 72d820dec546752e5a8303b33b009079c15c2390ce76d67cf514991646c6127b
+      checksum_algo: sha256
+    i386:
+      package: go1.10.1.linux-386.tar.gz
+      url: https://storage.googleapis.com/golang/go1.10.1.linux-386.tar.gz
+      checksum: acbe19d56123549faf747b4f61b730008b185a0e2145d220527d2383627dfe69
+      checksum_algo: sha256
   "1.9.2":
     x86_64:
       package: go1.9.2.linux-amd64.tar.gz
