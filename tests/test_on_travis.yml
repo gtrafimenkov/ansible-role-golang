@@ -48,6 +48,13 @@
     golang_version: "1.10.1"
   roles:
     - ansible-role-golang
+    
+- hosts: localhost
+  become: yes
+  vars:
+    golang_version: "1.10.2"
+  roles:
+    - ansible-role-golang
 
 - hosts: localhost
   become: yes
