@@ -23,6 +23,7 @@ You can specify another version using variable `golang_version`.  For example:
 ```
 
 ### Supported Version
+- 1.10.2
 - 1.10.1
 - 1.9.2
 - 1.8
