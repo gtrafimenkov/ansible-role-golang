@@ -1,3 +1,5 @@
+*This project has been discontinued.*
+
 ## Install Go lang
 
 This role installs [Golang](https://golang.org/) from a binary package.
